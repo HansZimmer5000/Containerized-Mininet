@@ -35,6 +35,7 @@ push_image(){
 
 merge_and_push(){
     branch="v2.3"
+    git tag -a v2.3 -m "Mininet v2.3"
     git checkout master
     git merge $branch
     git push
