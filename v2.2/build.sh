@@ -46,11 +46,11 @@ case "$1" in
     "test")
         test_image
         ;;
-    "push")
+    "upload")
         push_image
         ;;
-    "merge")
-        merge_and_push
+    "push")
+        tag_and_push
         ;;
     *|"-h"|"help")
         help
