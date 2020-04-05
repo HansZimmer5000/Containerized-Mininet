@@ -1,9 +1,3 @@
-git
-ca-certificates
-sudo
-patch
-apt-utils
-
 adduser
 apt
 base-files
@@ -187,3 +181,9 @@ xbitmaps
 xterm
 xxd
 zlib1g
+
+git
+ca-certificates
+sudo
+patch
+apt-utils

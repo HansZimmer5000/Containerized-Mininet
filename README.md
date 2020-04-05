@@ -3,8 +3,10 @@ Mininet in Version 2.2.2 in a Docker Image
 
 ## Execution
 
-Start the container with "--privileged" to make it work. 
-Which of the extra rights mininet needs, I haven't look up yet.
+Execute the following command to test if the images works with the basic built-in test, you may want to add `-v debug` at the end for more output.
+```shell
+docker run --privileged hanszimmer5000/mininet:v2.2.2-latest mn --test pingall
+```
 
-Test if the container works with a simple `mn --test pingall`, you may want to add `-v debug` at the end for more output.
+Unfortunately the `--privileged` is not mandatory. Which special rights mininet uses, I haven't looked up yet.
 
