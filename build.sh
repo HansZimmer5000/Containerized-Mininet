@@ -11,6 +11,8 @@ Usage:
     build (default):Build the docker image with different tags
     test:           Test the current build docker image with the basic 'pingall' mininet test
     push:           Push the docker image to Docker Hub
+    -- GIT --
+    merge:          Merge master & current branch and push master
 "
 }
 
@@ -31,6 +33,14 @@ push_image(){
     docker push hanszimmer5000/mininet:$current_version
 }
 
+merge_and_push(){
+    branch="v2.3"
+    git checkout master
+    git merge $branch
+    git push
+    git checkout $branch
+}
+
 case "$1" in
     "build"|"") 
         build_image
@@ -40,6 +50,9 @@ case "$1" in
         ;;
     "push")
         push_image
+        ;;
+    "merge")
+        merge_and_push
         ;;
     *|"-h"|"help")
         help
