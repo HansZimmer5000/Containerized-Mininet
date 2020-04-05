@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source current_version
+source ./current_version
 docker build \
     -f Dockerfile \
     -t mn \
