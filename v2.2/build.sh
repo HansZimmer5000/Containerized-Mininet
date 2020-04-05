@@ -34,8 +34,8 @@ push_image(){
 }
 
 tag_and_push(){
-    branch="v2.2"
-    git tag -a v2.2 -m "Mininet v2.2"
+    tag_name="v2.2"
+    git tag $tag_name $tag_name^{} -f -a -m "Mininet v2.2"
     git push
 }
 
