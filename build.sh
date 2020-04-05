@@ -26,7 +26,7 @@ build_image(){
 }
 
 test_image(){
-    docker run --rm --privileged hanszimmer5000/mininet:v2.2.2-latest mn --test pingall
+    docker run --rm --privileged hanszimmer5000/mininet:$current_version mn --test pingall
 }
 
 push_image(){
