@@ -39,7 +39,7 @@ case "$1" in
         test_image
         ;;
     "push")
-        push
+        push_image
         ;;
     *|"-h"|"help")
         help
