@@ -35,9 +35,12 @@ push_image(){
 
 tag_and_push(){
     tag_name="v2.3"
-    git tag $tag_name $tag_name^{} -f -a -m "Mininet v2.2"
-    git tag latest latest^{} -f -a -m "Mininet latest version (currently this is v2.3)"
+    git checkout $tag_name
+    git merge master
+    #git tag $tag_name $tag_name^{} -f -a -m "Mininet v2.3"
+    #git tag latest latest^{} -f -a -m "Mininet latest version (currently this is v2.3)"
     git push
+    git checkout master
 }
 
 case "$1" in
