@@ -2,6 +2,20 @@
 
 source ./current_version
 
+help(){
+    echo "
+This script helps to interact with the git and docker repository.
+Usage:
+    -h | help:      Print this usage
+    -- DOCKER --
+    build (default):Build the docker image with different tags
+    test:           Test the current build docker image with the basic 'pingall' mininet test
+    push:           Push the docker image to Docker Hub
+    -- GIT --
+    merge:          Merge master & dev branch and push master
+"
+}
+
 build_image(){
     docker build \
         -f Dockerfile \
@@ -19,14 +33,14 @@ push_image(){
     docker push hanszimmer5000/mininet:$current_version
 }
 
-merge_branches(){
+merge_and_push(){
     git checkout master
     git merge dev
     git push
     git checkout dev
 }
 
-case $1; do
+case "$1" in
     "build"|"") 
         build_image
         ;;
@@ -37,9 +51,9 @@ case $1; do
         push
         ;;
     "merge")
-        merge_branches
+        merge_and_push
         ;;
-    *)
-        echo "Param not known: $1"
+    *|"-h"|"help")
+        help
         ;;
 esac
