@@ -1,6 +1,7 @@
 # Containerized-Mininet
 
 Basic Mininet in a Docker Image.
+Currently supported are the current Mininet release (v2.2.2) and the latest (05. April 2020) tagged commit (v2.3.0d6).
 
 ## Execution
 
@@ -13,10 +14,13 @@ Unfortunately the `--privileged` is not mandatory. Which special rights mininet 
 
 ## Docker Image Versioning
 
-Beware if you are using `:latest` tag or omitting tags, since this could lead to Mininet v2.2 or v2.3. Better use `:v2.2-latest` or `v2.3-latest` respectively to be sure.
 
-For the latest image version use `:latest` tag.
-The `:v2.2.2-v1.1` means this is Mininet v2.2.2 in image major version 1 and minor version 1 (like used for PostgreSQL versioning). 
+List of image versions:
+- latest: Latest version of this image running Mininet (currently v2.3.0d6)
+- v2.2-latest: Latest version of this image running Mininet (currently v2.2.2)
+- v2.3-latest: Latest version of this image running Mininet (currently v2.3.0d6)
+- \<Mininet-Version>-\<Image-Version>: Specific tags for specific mininet versions and image versions. 
+
+As example, the `:v2.2.2-v1.0` means this is Mininet v2.2.2 in image major version 1 and minor version 0 (like used for PostgreSQL versioning). 
 - Major updates include new functionalities for the user.
 - Minor updates include small fixes and upgrades for the build process.
-
