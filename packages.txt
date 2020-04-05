@@ -1,3 +1,9 @@
+git
+ca-certificates
+sudo
+patch
+apt-utils
+
 adduser
 apt
 base-files
