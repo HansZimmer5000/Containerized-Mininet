@@ -16,8 +16,8 @@ RUN rm -rf /home/openflow/ && \
     mkdir /usr/share/man/man1
 
 # Install Mininet from git
-RUN git clone https://github.com/mininet/mininet.git /home/mininet
-WORKDIR /home/mininet
+RUN git clone https://github.com/mininet/mininet.git /home/mininet/
+WORKDIR /home/mininet/
 RUN git checkout 2.2.2
 COPY mod_install.sh /home/mininet/util/install.sh
 RUN chmod +x /home/mininet/util/install.sh && \
