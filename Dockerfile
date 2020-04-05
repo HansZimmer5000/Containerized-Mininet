@@ -17,6 +17,7 @@ RUN rm -rf /home/openflow/ && \
 RUN git clone https://github.com/mininet/mininet.git /home/mininet/
 WORKDIR /home/mininet/
 RUN git checkout 2.3.0d6
+RUN /home/mininet/util/install.sh -fnv
 
 # Prepare Start
 EXPOSE 6633 6653 6640
