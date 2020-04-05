@@ -36,6 +36,7 @@ push_image(){
 tag_and_push(){
     branch="v2.3"
     git tag -a v2.3 -m "Mininet v2.3"
+    git tag -a latest -m "Mininet latest version (currently this is v2.3)"
     git push
 }
 
