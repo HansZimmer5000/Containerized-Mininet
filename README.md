@@ -13,9 +13,10 @@ Unfortunately the `--privileged` is not mandatory. Which special rights mininet 
 
 ## Docker Image Versioning
 
+Beware if you are using `:latest` tag or omitting tags, since this could lead to Mininet v2.2 or v2.3. Better use `:v2.2-latest` or `v2.3-latest` respectively to be sure.
+
 For the latest image version use `:latest` tag.
 The `:v2.2.2-v1.1` means this is Mininet v2.2.2 in image major version 1 and minor version 1 (like used for PostgreSQL versioning). 
 - Major updates include new functionalities for the user.
 - Minor updates include small fixes and upgrades for the build process.
 
-Currently this repository only has Mininet v2.2.2. This may change in the future, so beware if you are using `:latest` tag only, as in common releases Mininet could be in a different version than v2.2.2.
