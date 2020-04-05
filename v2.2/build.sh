@@ -12,7 +12,7 @@ Usage:
     test:           Test the current build docker image with the basic 'pingall' mininet test
     push:           Push the docker image to Docker Hub
     -- GIT --
-    merge:          Merge master & currnet branch and push master
+    push:           Tag and push master
 "
 }
 
@@ -33,12 +33,10 @@ push_image(){
     docker push hanszimmer5000/mininet:$current_version
 }
 
-merge_and_push(){
+tag_and_push(){
     branch="v2.2"
-    git checkout master
-    git merge $branch
+    git tag -a v2.2 -m "Mininet v2.2"
     git push
-    git checkout $branch
 }
 
 case "$1" in
