@@ -1,6 +1,6 @@
 # Containerized-Mininet
 
-Mininet in Version 2.2.2 in a Docker Image
+Basic Mininet in a Docker Image.
 
 ## Execution
 

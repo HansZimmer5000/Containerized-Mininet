@@ -16,10 +16,7 @@ RUN rm -rf /home/openflow/ && \
 # Install Mininet from git
 RUN git clone https://github.com/mininet/mininet.git /home/mininet/
 WORKDIR /home/mininet/
-RUN git checkout 2.2.2
-COPY mod_install.sh /home/mininet/util/install.sh
-RUN chmod +x /home/mininet/util/install.sh && \
-    /home/mininet/util/install.sh -fnv
+RUN git checkout 2.3.0d6
 
 # Prepare Start
 EXPOSE 6633 6653 6640
