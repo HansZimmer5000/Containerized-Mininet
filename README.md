@@ -6,8 +6,26 @@ Currently supported are the current Mininet release (v2.2.2) and the latest (05.
 ## Execution
 
 Execute the following command to test if the images works with the basic built-in test, you may want to add `-v debug` at the end for more output.
+Normal Run:
 ```shell
 docker run --privileged hanszimmer5000/mininet:v2.2-latest mn --test pingall
+```
+Run with X11 and xterm (with Help from [StackOverflow](https://stackoverflow.com/questions/16296753/can-you-run-gui-applications-in-a-docker-container/25280523#25280523)):
+```shell
+XSOCK=/tmp/.X11-unix
+XAUTH=/tmp/.docker.xauth
+xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
+
+docker run \
+    --rm \
+    --privileged \
+    -it \
+    -e DISPLAY="$DISPLAY" \
+    -e XAUTHORITY=$XAUTH \
+    -v $XSOCK:$XSOCK \
+    -v $XAUTH:$XAUTH \
+    hanszimmer5000/mininet:v2.2.2-v1.1 \
+    xterm
 ```
 
 Unfortunately the `--privileged` is not mandatory. Which special rights mininet uses, I haven't looked up yet.
