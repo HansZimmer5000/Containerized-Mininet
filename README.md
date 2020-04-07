@@ -3,6 +3,8 @@
 Basic Mininet in a Docker Image.
 Currently supported are the current Mininet release (v2.2.2) and the latest (05. April 2020) tagged commit (v2.3.0d6).
 
+If not other specified this image bases upon `debian:stretch-slim`.
+
 ## Execution
 
 Execute the following command to test if the images works with the basic built-in test, you may want to add `-v debug` at the end for more output.
