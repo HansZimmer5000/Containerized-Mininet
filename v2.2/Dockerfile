@@ -18,7 +18,8 @@ RUN git clone https://github.com/mininet/mininet.git /home/mininet/
 WORKDIR /home/mininet/
 RUN git checkout 2.2.2
 COPY mod_install.sh /home/mininet/util/install.sh
-RUN /home/mininet/util/install.sh -fnv
+RUN chmod +x /home/mininet/util/install.sh && \
+     /home/mininet/util/install.sh -fnv
 
 # Prepare Start
 EXPOSE 6633 6653 6640
