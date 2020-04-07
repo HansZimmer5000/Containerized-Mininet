@@ -34,7 +34,7 @@ push_image(){
 }
 
 tag_and_push(){
-    tag_name="v2.2"
+    tag_name="buster-v2.2"
     git checkout $tag_name
     git merge master
     #git tag $tag_name $tag_name^{} -f -a -m "Mininet v2.2"
