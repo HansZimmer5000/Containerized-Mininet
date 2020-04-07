@@ -2,6 +2,8 @@ FROM debian:buster-slim
 
 LABEL maintainer="Michael Müller (michael.mueller2@haw-hamburg.de)"
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 # Install packages
 RUN apt-get update && \
     apt-get install \
