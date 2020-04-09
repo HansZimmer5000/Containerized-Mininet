@@ -3,6 +3,7 @@
 # Modifications:
 # remove: set -e
 # replace: "...-controller" with "...-testcontroller"
+# add "--no-install-recommends --no-install-suggests" to "apt-get -y -q install".
 
 # Mininet install script for Ubuntu and Debian
 # Original author: Brandon Heller
@@ -38,7 +39,7 @@ test -e /etc/debian_version && DIST="Debian"
 grep Ubuntu /etc/lsb-release &> /dev/null && DIST="Ubuntu"
 if [ "$DIST" = "Ubuntu" ] || [ "$DIST" = "Debian" ]; then
     # Truly non-interactive apt-get installation
-    install='sudo DEBIAN_FRONTEND=noninteractive apt-get -y -q install'
+    install='sudo DEBIAN_FRONTEND=noninteractive apt-get -y -q install --no-install-recommends --no-install-suggests'
     remove='sudo DEBIAN_FRONTEND=noninteractive apt-get -y -q remove'
     pkginst='sudo dpkg -i'
     update='sudo apt-get'
